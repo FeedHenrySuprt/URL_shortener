@@ -11,7 +11,10 @@ exports.googleapis = function(params, cb) {
       longUrl: params.url || 'https://www.feedhenry.com'
     });
 
+    console.log(req1);
+    req1.withApiKey('AIzaSyDXhUKCJN9icV9oFJLSocP73jNtAB_TZEM');
     req1.execute(function(err, response) {
+      console.log(err);
       console.log('Short URL is', response.id);
       return cb(null, response);
     });
