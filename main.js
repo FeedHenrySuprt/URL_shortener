@@ -14,7 +14,7 @@ exports.googleapis = function(params, cb) {
     });
 
     console.log(req1);
-    req1.withApiKey('AIzaSyDXhUKCJN9icV9oFJLSocP73jNtAB_TZEM');
+    req1.withApiKey(  << place google API key here  >>  );
     req1.execute(function(err, response) {
       console.log(err);
       console.log('Short URL is', response.id);
