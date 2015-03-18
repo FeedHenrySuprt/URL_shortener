@@ -6,7 +6,9 @@ var googleapis = require('googleapis');
  @param params.url : the URL to shorten
  */
 exports.googleapis = function(params, cb) {
-  googleapis.discover('urlshortener', 'v1').execute(function(err, client) {
+  googleapis.withOpts({ cache: { path: 'public' }}).discover('urlshortener', 'v1').execute(function(err, client) {
+    console.log('executing');
+    console.log('dirname is ' + __dirname);
     var req1 = client.urlshortener.url.insert({
       longUrl: params.url || 'https://www.feedhenry.com'
     });
