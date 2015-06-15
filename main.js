@@ -6,6 +6,7 @@ var googleapis = require('googleapis');
  @param params.url : the URL to shorten
  */
 exports.googleapis = function(params, cb) {
+ // Note that, a folder named 'public' must be present in the same folder for the cache: { path: 'public' } option to work.
   googleapis.withOpts({ cache: { path: 'public' }}).discover('urlshortener', 'v1').execute(function(err, client) {
     console.log('executing');
     console.log('dirname is ' + __dirname);
